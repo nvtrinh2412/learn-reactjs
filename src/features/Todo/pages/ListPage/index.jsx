@@ -4,6 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 import TodoList from '../../components/TodoList';
 // import {useClock} from '../../components/Clock';
+import TodoForm from './../../components/TodoForm/index';
+
+
 ListPage.propTypes = {};
 
 function ListPage(props) {
@@ -75,10 +78,14 @@ function ListPage(props) {
     newTodoList[idx].status = todo.status === 'new' ? 'completed' : 'new';
     setTodoList(newTodoList);
   };
-
+  const handleTodoFormSubmit = (todo) => {
+    console.log("Submit",todo);
+  }
   // const {timeString} = useClock();
   return (
     <div>
+      <h3>What to do</h3>
+      <TodoForm onSubmit={handleTodoFormSubmit}/>
       <h3>Todo List </h3>
       <TodoList todoList={renderedTodoList} onTodoClick={handleTodoClick} />
       <button onClick={handleShowAllClick}>Show all</button>

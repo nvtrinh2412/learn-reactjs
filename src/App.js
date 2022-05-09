@@ -6,6 +6,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AlbumFeature from './features/Album';
 import TodoFeature from './features/Todo';
+import TodoForm from './features/Todo/components/TodoForm/index';
 
 
 
@@ -20,7 +21,6 @@ function App() {
 
 return (
   <div className="app">
-    Header
     <p><Link to="/todos">Todos</Link></p>
     <p><Link to="/albums">Album</Link></p>
 
@@ -29,7 +29,7 @@ return (
         <Redirect  from="/post-list" to="/posts" /> */}
       <Route path="/todos" component={TodoFeature} />
       <Route path="/albums" component={AlbumFeature} />
-      <Route path="/" component={TodoFeature} />
+      <Route path="/" component={AlbumFeature}/>
       <Route component={NotFound} />
     </Switch>
 
