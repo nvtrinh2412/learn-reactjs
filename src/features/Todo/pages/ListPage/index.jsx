@@ -80,6 +80,12 @@ function ListPage(props) {
   };
   const handleTodoFormSubmit = (todo) => {
     console.log("Submit",todo);
+    const newTodo={
+      id: todoList.length + 1,
+      title: todo.title,
+      status: 'new',
+    }
+    setTodoList([...todoList,newTodo]);
   }
   // const {timeString} = useClock();
   return (

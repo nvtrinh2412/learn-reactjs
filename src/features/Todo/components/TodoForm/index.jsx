@@ -14,7 +14,9 @@ TodoForm.propTypes = {
 
 function TodoForm(props) {
   const schema = yup.object({
-    title: yup.string().required("Title is required"),
+    title: yup.string()
+                      .required("Title is required")
+                      .min(10, "Title must be at least 3 characters"),
   }).required();
 
   const form = useForm({
@@ -30,6 +32,7 @@ function TodoForm(props) {
     if (onSubmit) {
       onSubmit(data);
     }
+    form.reset();
   };
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)}>
