@@ -7,6 +7,7 @@ import './App.css';
 import AlbumFeature from './features/Album';
 import TodoFeature from './features/Todo';
 import TodoForm from './features/Todo/components/TodoForm/index';
+import CounterFeatures from './components/Counter';
 
 
 
@@ -29,7 +30,7 @@ return (
         <Redirect  from="/post-list" to="/posts" /> */}
       <Route path="/todos" component={TodoFeature} />
       <Route path="/albums" component={AlbumFeature} />
-      <Route path="/" component={AlbumFeature}/>
+      <Route path="/" component={CounterFeatures}/>
       <Route component={NotFound} />
     </Switch>
 
